@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IRAQRE.ViewModels"
+             xmlns:Syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:tabview="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             xmlns:nestedView="clr-namespace:IRAQRE.Views.NestedView"
+             x:Class="IRAQRE.Views.HomePage">
+    <ContentPage.BindingContext>
+        <vm:HomePageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="setting" Priority="1" Command="{Binding SettingIconTapped}"/>
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center">
+            <Grid HorizontalOptions="FillAndExpand" RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="re_logo.png" HeightRequest="30" WidthRequest="30" Grid.RowSpan="2" Grid.Column="0" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
+                <Label Text="IRAQ Real Estate" TextColor="White" FontSize="14" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand" VerticalOptions="End"/>
+                <Label Text="Future Homes" TextColor="White" FontSize="11" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Start"/>
+            </Grid>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Baghdad, Iraq" Grid.Column="0" TextColor="Black" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Image  Source="{Binding ListviewIcon}" Grid.Column="1" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ListViewDisplayCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{Binding ThumbnailviewIcon}" Grid.Column="2" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ThumbnailViewDisplayCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{Binding GridviewIcon}" Grid.Column="3" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GridViewDisplayCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <ImageButton BackgroundColor="Transparent" Source="filter" Grid.Column="4" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding FilterCommand}"/>
+                <Image Source="flag.png" Grid.Column="5" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" >
+                </Image>
+                <Label Text="العَرَبِيَّة" Grid.Column="6" HorizontalOptions="Start" TextColor="Black" FontSize="14" VerticalOptions="Center"/>
+            </Grid>
+            <tabview:SfTabView EnableSwiping="True" Grid.Row="1" x:Name="searchTab" VisibleHeaderCount="3"
+                                          BackgroundColor="White"
+                                          TabHeight="55"
+                                          DisplayMode="ImageWithText"
+                                          TabHeaderPosition="Bottom">
+                <tabview:SfTabView.SelectionIndicatorSettings>
+                    <tabview:SelectionIndicatorSettings Color="Transparent"/>
+                </tabview:SfTabView.SelectionIndicatorSettings>
+                <tabview:SfTabView.Items>
+                    <tabview:SfTabItem Title="Search" IconFont="&#xf002;" FontIconFontFamily="fa-solid-900.ttf" FontIconFontSize="20" TitleFontSize="9" TitleFontColor="#5D5D5D" SelectionColor="#BD0014" FontIconFontColor="#BD0014">
+                        <tabview:SfTabItem.Content>
+                            <nestedView:HomePageSearchView Padding="0,0,0,55"/>
+                        </tabview:SfTabItem.Content>
+                    </tabview:SfTabItem>
+
+                    <tabview:SfTabItem Title="Messages" IconFont="&#xf004;" FontIconFontFamily="fa-regular-400.ttf" FontIconFontSize="20" TitleFontSize="9" TitleFontColor="#5D5D5D" SelectionColor="#BD0014" FontIconFontColor="#BD0014">
+                        <tabview:SfTabItem.Content>
+                            <Grid>
+
+                            </Grid>
+                        </tabview:SfTabItem.Content>
+                    </tabview:SfTabItem>
+
+                    <tabview:SfTabItem Title="Profile" IconFont="&#xf2bd;" FontIconFontFamily="fa-regular-400.ttf" FontIconFontSize="20" TitleFontSize="9" TitleFontColor="#5D5D5D" SelectionColor="#BD0014" FontIconFontColor="#BD0014">
+                        <tabview:SfTabItem.Content>
+                            <Grid>
+
+                            </Grid>
+                        </tabview:SfTabItem.Content>
+                    </tabview:SfTabItem>
+                </tabview:SfTabView.Items>
+            </tabview:SfTabView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

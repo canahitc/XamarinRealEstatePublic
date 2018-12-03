@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="IRAQRE.Views.NestedView.HomePageSearchView">
+  <ContentView.Content>
+        <Grid>
+            <Grid BackgroundColor="#DEDEDE" IsVisible="{Binding IsListViewVisible}">
+                <Syncfusion:SfListView Margin="0" ItemsSource="{Binding RealEstateList}"
+                         Padding="0,5,0,5" SelectedItem="{Binding SelectedRealEstate}"
+                         
+                         BackgroundColor="#F0F0F0"
+                         ItemSpacing="0,0,0,5">
+                    <Syncfusion:SfListView.ItemSize>
+                        <OnPlatform x:TypeArguments="x:Double" Android="120" iOS="120"/>
+                    </Syncfusion:SfListView.ItemSize>
+                    <Syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0">
+                                <Frame.HasShadow>
+                                    <OnPlatform x:TypeArguments="x:Boolean" Android="True" iOS="False"/>
+                                </Frame.HasShadow>
+                                <Grid Padding="0,10,0,10" ColumnSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Margin="0,-10,0,-10" Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding HomePrice, StringFormat='{0:N} USD/year'}" TextColor="Black" FontSize="14"/>
+                                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10">
+                                        <Label Text="{Binding HomeType}" TextColor="Black" FontSize="12"/>
+
+                                        <StackLayout Orientation="Horizontal" Spacing="0">
+                                            <!--<Image Source="bed_icon.png" HeightRequest="15" WidthRequest="15"/>-->
+                                            <ffimageloadingsvg:SvgCachedImage WidthRequest="20" HeightRequest="20" Source="resource://IRAQRE.SVGImages.bed_icon.svg"/>
+                                            <Label Text="{Binding BedroomNumber}" TextColor="Gray" FontSize="12"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Spacing="0">
+                                            <!--<Image Source="bathtub_icon.png" HeightRequest="15" WidthRequest="15"/>-->
+                                            <ffimageloadingsvg:SvgCachedImage WidthRequest="20" HeightRequest="20" Source="resource://IRAQRE.SVGImages.bathtub_icon.svg"/>
+                                            <Label Text="{Binding WashroomNumber}" TextColor="Gray" FontSize="12"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}" LineBreakMode="WordWrap" MaxLines="2" FontSize="12"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </Syncfusion:SfListView.ItemTemplate>
+                </Syncfusion:SfListView>
+            </Grid>
+
+            <Grid BackgroundColor="#DEDEDE" IsVisible="{Binding IsGridViewVisible}">
+                <Syncfusion:SfListView Margin="0" ItemsSource="{Binding RealEstateList}"
+                         Padding="0,5,0,5" SelectedItem="{Binding SelectedRealEstate}"
+                         
+                         BackgroundColor="#F0F0F0"
+                         ItemSpacing="5">
+                    <Syncfusion:SfListView.ItemSize>
+                        <OnPlatform x:TypeArguments="x:Double" Android="250" iOS="250"/>
+                    </Syncfusion:SfListView.ItemSize>
+                    <Syncfusion:SfListView.LayoutManager>
+                        <Syncfusion:GridLayout>
+                            <Syncfusion:GridLayout.SpanCount>
+                                <OnIdiom x:TypeArguments="x:Int32"
+                                Phone="2"/>
+                            </Syncfusion:GridLayout.SpanCount>
+                        </Syncfusion:GridLayout>
+                    </Syncfusion:SfListView.LayoutManager>
+                    <Syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0">
+                                <Frame.HasShadow>
+                                    <OnPlatform x:TypeArguments="x:Boolean" Android="True" iOS="False"/>
+                                </Frame.HasShadow>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="6*"/>
+                                        <RowDefinition Height="4*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0" Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                                    <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="5" Padding="5">
+                                        <Label Text="{Binding HomePrice, StringFormat='{0:N} USD/year'}" TextColor="Black" FontSize="14"/>
+                                        <StackLayout Orientation="Horizontal" Spacing="10">
+                                            <Label Text="{Binding HomeType}" TextColor="Black" FontSize="12"/>
+
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <!--<Image Source="bed_icon.png" HeightRequest="15" WidthRequest="15"/>-->
+                                                <ffimageloadingsvg:SvgCachedImage WidthRequest="20" HeightRequest="20" Source="resource://IRAQRE.SVGImages.bed_icon.svg"/>
+                                                <Label Text="{Binding BedroomNumber}" TextColor="Gray" FontSize="12"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <!--<Image Source="bathtub_icon.png" HeightRequest="15" WidthRequest="15"/>-->
+                                                <ffimageloadingsvg:SvgCachedImage WidthRequest="20" HeightRequest="20" Source="resource://IRAQRE.SVGImages.bathtub_icon.svg"/>
+                                                <Label Text="{Binding WashroomNumber}" TextColor="Gray" FontSize="12"/>
+                                            </StackLayout>
+
+                                        </StackLayout>
+
+                                        <Label Text="{Binding Address}" LineBreakMode="WordWrap" MaxLines="2" FontSize="12"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </Syncfusion:SfListView.ItemTemplate>
+                </Syncfusion:SfListView>
+            </Grid>
+
+            <Grid BackgroundColor="#DEDEDE" IsVisible="{Binding IsThumbnailViewVisible}">
+                <Syncfusion:SfListView Margin="0" ItemsSource="{Binding RealEstateList}"
+                         Padding="0,5,0,5" SelectedItem="{Binding SelectedRealEstate}"
+                         
+                         BackgroundColor="#F0F0F0"
+                                   ItemSpacing="0,5,0,5">
+                    <Syncfusion:SfListView.ItemSize>
+                        <OnPlatform x:TypeArguments="x:Double" Android="250" iOS="250"/>
+                    </Syncfusion:SfListView.ItemSize>
+                    <Syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0">
+                                <Frame.HasShadow>
+                                    <OnPlatform x:TypeArguments="x:Boolean" Android="True" iOS="False"/>
+                                </Frame.HasShadow>
+                                <Grid Padding="0,0,0,10" ColumnSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="7*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Grid.Row="0" Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <Grid Grid.Row="1" Padding="10,0,10,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="7*"/>
+                                            <ColumnDefinition Width="1.5*"/>
+                                            <ColumnDefinition Width="1.5*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding HomePrice, StringFormat='{0:N} USD/year'}" FontSize="14" TextColor="Black"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding Address}" LineBreakMode="WordWrap" MaxLines="2"/>
+                                        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Spacing="10">
+                                            <Label Text="{Binding HomeType}" FontSize="12" TextColor="Black"/>
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <!--<Image Source="bed_icon" HeightRequest="15" WidthRequest="15"/>-->
+                                                <ffimageloadingsvg:SvgCachedImage WidthRequest="20" HeightRequest="20" Source="resource://IRAQRE.SVGImages.bed_icon.svg"/>
+                                                <Label Text="{Binding BedroomNumber}" FontSize="12" TextColor="Gray"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <!--<Image Source="bathtub_icon" HeightRequest="15" WidthRequest="15"/>-->
+                                                <ffimageloadingsvg:SvgCachedImage WidthRequest="20" HeightRequest="20" Source="resource://IRAQRE.SVGImages.bathtub_icon.svg"/>
+                                                <Label Text="{Binding WashroomNumber}" FontSize="12" TextColor="Gray"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                                            <!--<Image Source="call_icon" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+                                            <ffimageloadingsvg:SvgCachedImage WidthRequest="35" HeightRequest="35" Source="resource://IRAQRE.SVGImages.calling.svg" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Label Text="Call" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Maroon"/>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding CallClicked}"/>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                                            <!--<Image Source="email_icon" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+                                            <ffimageloadingsvg:SvgCachedImage WidthRequest="35" HeightRequest="35" Source="resource://IRAQRE.SVGImages.messages.svg" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Label Text="Email" FontSize="10" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Maroon"/>
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding EmailClicked}"/>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </Syncfusion:SfListView.ItemTemplate>
+                </Syncfusion:SfListView>
+            </Grid>
+
+            <StackLayout Orientation="Vertical" Spacing="5" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,15,30" IsVisible="{Binding IsFloatingActionVisible}">
+                <ImageButton Source="sorting.png" Command="{Binding SortingCommand}" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"/>
+                <ImageButton Source="location.png" Command="{Binding MapShowCommand}" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent"/>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

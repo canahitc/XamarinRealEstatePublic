@@ -1,0 +1,16 @@
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\bin\Debug\netstandard2.0\IRAQRE.deps.json
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\bin\Debug\netstandard2.0\IRAQRE.dll
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\bin\Debug\netstandard2.0\IRAQRE.pdb
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\IRAQRE.csprojAssemblyReference.cache
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\Views\MasterPage\MasterMenuPage.xaml.g.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\Views\MasterPage\MasterPage.xaml.g.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\Views\NestedView\HomePageSearchView.xaml.g.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\IRAQRE.csproj.CoreCompileInputs.cache
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\IRAQRE.AssemblyInfoInputs.cache
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\IRAQRE.AssemblyInfo.cs
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\IRAQRE.dll
+C:\Jinz\IRAQRE\IRAQRE\IRAQRE\IRAQRE\obj\Debug\netstandard2.0\IRAQRE.pdb

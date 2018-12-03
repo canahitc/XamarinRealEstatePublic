@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SVGImages\bathtub_icon.svg" />
+    <None Remove="SVGImages\bed_icon.svg" />
+    <None Remove="SVGImages\calling.svg" />
+    <None Remove="SVGImages\correctgreen.svg" />
+    <None Remove="SVGImages\heart.svg" />
+    <None Remove="SVGImages\icons-06.svg" />
+    <None Remove="SVGImages\icons-07.svg" />
+    <None Remove="SVGImages\icons-08.svg" />
+    <None Remove="SVGImages\messages.svg" />
+    <None Remove="SVGImages\search.svg" />
+    <None Remove="SVGImages\userprofile.svg" />
+    <None Remove="SVGImages\userprofile1.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SVGImages\bathtub_icon.svg" />
+    <EmbeddedResource Include="SVGImages\bed_icon.svg" />
+    <EmbeddedResource Include="SVGImages\calling.svg" />
+    <EmbeddedResource Include="SVGImages\correctgreen.svg" />
+    <EmbeddedResource Include="SVGImages\heart.svg" />
+    <EmbeddedResource Include="SVGImages\icons-06.svg" />
+    <EmbeddedResource Include="SVGImages\icons-07.svg" />
+    <EmbeddedResource Include="SVGImages\icons-08.svg" />
+    <EmbeddedResource Include="SVGImages\messages.svg" />
+    <EmbeddedResource Include="SVGImages\search.svg" />
+    <EmbeddedResource Include="SVGImages\userprofile.svg" />
+    <EmbeddedResource Include="SVGImages\userprofile1.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.3.0.29" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="16.3.0.29" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MasterPage\MasterMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MasterPage\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NestedView\HomePageSearchView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\HomeSearchPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MasterPage\MasterMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MasterPage\MasterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\NestedView\HomePageSearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>
